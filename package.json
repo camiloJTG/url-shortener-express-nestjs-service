@@ -1,10 +1,14 @@
 {
   "name": "url-shortener-express-nestjs-service",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "",
   "author": "",
   "private": true,
   "license": "UNLICENSED",
+  "engines": {
+    "npm": ">=8.0.0",
+    "node": "18.x"
+  },
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
