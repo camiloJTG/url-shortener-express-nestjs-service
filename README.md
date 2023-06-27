@@ -2,7 +2,7 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
 
-# url-shortener-express.nestjs-service
+# url-shortener-express-nestjs-service
 
 ## What is this ?
 
