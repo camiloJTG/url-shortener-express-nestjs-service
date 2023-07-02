@@ -5,6 +5,7 @@ import { ThrottlerModule } from '@nestjs/throttler';
 import { envSchemaValidation } from './config/validation.config';
 import { ShortenerModule } from './shortener/shortener.module';
 import { CommonModule } from './common/common.module';
+import { ClientsModule } from './clients/clients.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { CommonModule } from './common/common.module';
     }),
     ShortenerModule,
     CommonModule,
+    ClientsModule,
   ],
   controllers: [],
   providers: [],
