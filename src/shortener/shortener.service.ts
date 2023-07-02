@@ -5,6 +5,7 @@ import { CreateShortenerDto } from './dto/create-shortener.dto';
 import { CommonService } from '../common/common.service';
 import { Shortener } from './entities/shortener.entity';
 import { CreateShortenerResp } from './interfaces/shortener.interfaces';
+import { RecapthaService } from 'src/clients/recaptcha.service';
 
 @Injectable()
 export class ShortenerService {
@@ -12,10 +13,14 @@ export class ShortenerService {
     @InjectRepository(Shortener)
     private readonly shortenerRepository: Repository<Shortener>,
     private readonly commonService: CommonService,
+    private readonly recaptchaService: RecapthaService,
   ) {}
 
-  async generateShortenedUrl({ url }: CreateShortenerDto) {
+  async generateShortenedUrl({ url, recaptchaToken }: CreateShortenerDto) {
     try {
+      if (recaptchaToken) {
+        await this.recaptchaService.getScore(recaptchaToken);
+      }
       const { code, shortenedUrl } = this.commonService.generateShortenedUrl();
       const result = this.shortenerRepository.create({
         originalUrl: url,

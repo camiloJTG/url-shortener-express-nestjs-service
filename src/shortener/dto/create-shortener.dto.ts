@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNotEmpty, IsUrl } from 'class-validator';
+import { IsNotEmpty, IsOptional, IsString, IsUrl } from 'class-validator';
 
 export class CreateShortenerDto {
   @ApiProperty({
@@ -11,4 +11,13 @@ export class CreateShortenerDto {
   @IsUrl()
   @IsNotEmpty()
   url: string;
+
+  @ApiProperty({
+    description: 'Token generated from the front',
+    type: 'string',
+    required: false,
+  })
+  @IsString()
+  @IsOptional()
+  recaptchaToken: string;
 }

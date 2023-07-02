@@ -15,4 +15,6 @@ export const envSchemaValidation = joi.object({
   HASH_LENGTH: joi.number().default(6).required(),
   APP_HOST: joi.string().required(),
   SWAGGER_VERSION: joi.string().required(),
+  RECAPTCHA_TOKEN_SERVICE: joi.string().required(),
+  RECAPTCHA_URL_VERIFY: joi.string().required(),
 });
