@@ -10,6 +10,7 @@ export const envSchemaValidation = joi.object({
   DB_PORT: joi.number().required(),
   DB_AUTOLOAD: joi.boolean().required(),
   DB_SYNCRO: joi.boolean().required(),
+  DB_SCHEMA: joi.string().required(),
   TTL_TIME: joi.number().default(60).required(),
   TTL_LIMIT: joi.number().default(10).required(),
   HASH_LENGTH: joi.number().default(6).required(),
